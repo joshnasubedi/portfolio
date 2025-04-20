@@ -1,0 +1,163 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" href="portfolio.css">
+</head>
+<body>
+   <div class="nav">
+        <div class="logo">
+          <h3>Joshna Subedi</h3>
+        </div>
+    <button class="menu-toggle" onclick="toggleMenu()">☰</button>
+        <div class="aboutus">
+          <ul type="none">
+            <li><a href=".main-section">Home</a></li>
+            <li><a href="#aboutme">About Me</a></li>
+            <li><a href="#experiences">Experiences</a></li>
+            <li><a href="#skills">Skills</a></li>
+            <li><a href=".contacthead">Contact</a></li>
+          </ul>
+        </div>
+    </div>
+    <div class="main-section">
+        <div class="first-section">
+<img src="picture2.jpeg" alt="photo1">
+        </div>
+        <div class="second-section">
+          <p>
+            <h1>My</h1>
+            <div class="line">
+            <hr>
+          </div>
+            <h1>Portfolio</h1>
+        </p>
+        <h3>Explore my journey as I combine creativity and technology to create impactful digital solutions.
+
+          Feel free to browse my portfolio, learn more about me, and check out my latest projects. Let’s collaborate and make something amazing together!
+        </h3>
+        </div>
+    </div>
+
+ <div id="aboutme">
+  <h1>About Me</h1>
+  <hr class="line"> 
+  <p>My name is Joshna Subedi, and I am currently pursuing a BSc.CSIT degree with a strong focus on web development and digital marketing. My passion lies in building dynamic, user-centric web applications using the MERN stack, where I combine modern technologies to deliver efficient and engaging solutions. In addition to web development, I have a keen interest in digital marketing, which allows me to craft effective strategies for connecting with audiences and driving meaningful engagement.  
+    
+    I thrive on challenges and enjoy taking a creative approach to problem-solving, whether it’s designing intuitive user interfaces, optimizing code performance, or analyzing market trends. My goal is to merge technical expertise with marketing insights to create impactful solutions that not only meet but exceed expectations.  
+    
+    Beyond academics and work, I am an avid learner who believes in constant self-improvement. Whether it's exploring emerging technologies, collaborating on innovative projects, or brainstorming fresh ideas, I find joy in the process of growth and discovery. When I’m not coding or strategizing, you’ll find me connecting with people, learning new skills, or finding inspiration in everyday experiences.  
+    
+    I’m always excited to take on new challenges, so let’s create something remarkable together!  
+    
+    </p>
+    </div>
+ <div id="experiences">
+  <div class="exp1">
+<img src="img3.jpg" alt="" height="680px" width="40%">
+<span class="imgspan"><img src="time.jpg" alt="" height="610px" width="75%" ></span>
+  </div>
+  <div class="exp2">
+    <h1>My</h1>
+    <hr class="line">
+    <h1>Experiences</h1>
+    <p> 
+        <h3>Freelance Content Writer</h3>
+        <ul>
+          <li>Partnered with Hanshikhar Technology and worked as a content writer</li>
+          <li>Year: 2021</li>
+        </ul>
+        <h3>Social Media Manager</h3>
+        <ul>
+          <li>Partnered with SARTE and managed their social media</li>  
+        <li>Year: 2024</li>
+      </ul>
+      <h3>Internship at Unified Mentor</h3>
+
+      <ul>
+        <li>Virtual Internship at Unified Mentor at Web-Development, India</li>
+  
+        
+        <li>Year: 2024</li>
+      </ul>
+    </p>
+  </div>
+ </div>
+ <div id="skills">
+  <h1>My Skills</h1>
+  <hr class="line">
+ 
+  <div class="skillparagraph">
+  <p>
+    <h3>MERN Stack</h3>
+    <ul>
+      <li>Completed full Web-Development Course at EEE Innovation Ghar</li>
+    <li>Learnt Skills: HTML,CSS,Bootstrap, JavaScript, Vue.js, PHP, Laravel</li>
+    </ul>
+    <h3>Nuxt.js Online Workshop </h3>
+    <ul>
+      <li>Completed online training for Nuxt.js from Code.IT</li>
+      <li>Learnt Skill: Nuxt.js</li>
+    </ul>
+    <h3>Digital Marketing</h3>
+    <ul>
+    <li>Completed Digital Marketing Full Course from EEE Innovation Ghar</li>
+   <li>Learnt Skills:Social Media Marketing,Email Marketing, Search engine optimization (SEO),<br><span style="padding-left: 91px;"></span> Search engine marketing (SEM), Content marketing, Meta Ads, Google Ads</li>
+  </ul>
+  </p>
+</div>
+
+ </div>
+ <div class="contacthead">
+ <h1>Contact Me</h1> 
+ <hr class="line">
+ </div>
+
+ <div class="contact-container">
+  <h1>Contact Me</h1>
+  <div class="contact-info">
+      <div class="info-box">
+          <h3>Email</h3>
+          <p>jyotshnasubedi13@example.com</p>
+      </div>
+      <div class="info-box">
+          <h3>Phone</h3>
+          <p>+977 9741660209</p>
+      </div>
+      <div class="info-box">
+          <h3>Location</h3>
+          <p>Kathmandu, Nepal</p>
+          <p> </p>
+      </div>
+  </div>
+
+  <form action="https://formsubmit.co/jyotshnasubedi13@gmail.com" method="POST">
+    <input type="text" name="name" placeholder="Your Name" required>
+    <input type="email" id="email" name="email" placeholder="Your Email" required>
+    <textarea name="message" rows="5"  name="msg" placeholder="Your Message" required></textarea>
+    <button type="submit">Send Message</button>
+</form>
+</div> 
+</div>
+<script src="https://smtpjs.com/v3/smtp.js"></script>
+ <script>
+  function toggleMenu() {
+    const aboutUsMenu = document.querySelector('.aboutus');
+    aboutUsMenu.classList.toggle('active');
+}
+// Enable smooth scrolling
+  document.querySelectorAll('.aboutus a').forEach(anchor => {
+    anchor.addEventListener('click', function (e) {
+      e.preventDefault();
+      document.querySelector(this.getAttribute('href')).scrollIntoView({
+        behavior: 'smooth'
+      });
+    });
+  });
+ 
+</script>
+</body>
+</html>
+
