@@ -417,7 +417,6 @@ body {
 /* Overall Skill Section */
 #skills {
   padding: 50px 0;
-  background-color: #2d2d2d;
   text-align: center;
 }
 
@@ -597,7 +596,6 @@ hr.line {
 
 .contacthead {
     padding: 60px 20px; /* Adjust padding for balanced spacing */
-    background-color: #2d2d2d;
     color: white;
     
 }
@@ -954,7 +952,8 @@ button:focus {
         }
       
         .aboutus ul {
-          flex-direction: column;
+display: flex;
+gap: 45px;
           padding: 0;
         }
       
@@ -1052,13 +1051,13 @@ button:focus {
           }
           
           input:focus, textarea:focus {
-            border-color: #00bcd4;
+            border-color: rgba(255, 105, 180, 0.2);;
             outline: none;
           }
           
           button {
             padding: 14px;
-            background-color: #00bcd4;
+            background-color: rgba(255, 105, 180, 0.2);;
             color: white;
             border: none;
             border-radius: 8px;
@@ -1069,7 +1068,7 @@ button:focus {
           }
           
           button:hover {
-            background-color: #0288d1;
+            background-color: rgba(255, 105, 180, 0.2);;
             transform: translateY(-5px);
           }
           
