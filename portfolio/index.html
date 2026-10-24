@@ -1,419 +1,234 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Document</title>
-    <link rel="stylesheet" href="style.css">
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<title>Joshna Subedi — Software Engineer</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=Bricolage+Grotesque:opsz,wght@12..96,500;12..96,800&family=DM+Sans:wght@400;500&display=swap" rel="stylesheet">
+<style>
+:root{--bg:#f8f5fc;--bg2:#e6e0f5;--ink:#2b2a45;--mute:#5f5d7c;--pink:#c4507d;--teal:#17806f;--gold:#a8680f;--card:rgba(255,255,255,.72);--line:rgba(43,42,69,.12);--r:22px;
+color-scheme:light;box-sizing:border-box;padding-top:env(safe-area-inset-top,0px);padding-bottom:env(safe-area-inset-bottom,0px)}
+
+
+
+html{scroll-behavior:smooth;scroll-padding-top:90px}
+*{box-sizing:border-box;margin:0}
+body{background:radial-gradient(900px 500px at 8% 0%,#fde6ef,transparent 60%),radial-gradient(900px 600px at 100% 30%,#dcecff,transparent 60%),radial-gradient(800px 500px at 0% 75%,#e2f5ea,transparent 60%),var(--bg);background-attachment:fixed;color:var(--ink);font:400 17px/1.7 "DM Sans",system-ui,sans-serif;overflow-x:hidden}
+h1,h2,h3{font-family:"Bricolage Grotesque",system-ui,sans-serif;line-height:1.05;letter-spacing:-.02em}
+a{color:inherit;text-decoration:none}
+:focus-visible{outline:3px solid var(--teal);outline-offset:3px;border-radius:8px}
+.bar{position:fixed;top:0;left:0;height:4px;width:100%;background:linear-gradient(90deg,var(--pink),var(--gold),var(--teal));transform-origin:0 50%;transform:scaleX(0);z-index:60;animation:grow linear both;animation-timeline:scroll(root)}
+@keyframes grow{to{transform:scaleX(1)}}
+.glow{position:fixed;width:420px;height:420px;border-radius:50%;pointer-events:none;background:radial-gradient(circle,color-mix(in srgb,var(--pink) 28%,transparent),transparent 65%);transform:translate(-50%,-50%);left:50%;top:30%;z-index:0;transition:left .4s ease-out,top .4s ease-out}
+nav{position:sticky;top:env(safe-area-inset-top,0px);z-index:50;display:flex;justify-content:space-between;align-items:center;padding:14px 5vw;backdrop-filter:blur(14px);background:color-mix(in srgb,var(--bg) 70%,transparent);border-bottom:1px solid var(--line)}
+nav b{font:800 1.3rem "Bricolage Grotesque";background:linear-gradient(90deg,var(--pink),var(--gold));-webkit-background-clip:text;background-clip:text;color:transparent}
+nav div{display:flex;gap:22px;font-size:.95rem}
+nav a{position:relative;color:var(--mute);transition:color .2s}
+nav a::after{content:"";position:absolute;left:0;bottom:-4px;height:2px;width:100%;background:var(--pink);transform:scaleX(0);transform-origin:right;transition:transform .35s}
+nav a:hover{color:var(--ink)}nav a:hover::after{transform:scaleX(1);transform-origin:left}
+main{position:relative;z-index:1}
+section{padding:110px 5vw;max-width:1180px;margin:auto}
+.hero{min-height:92vh;display:grid;grid-template-columns:1.25fr 1fr;gap:50px;align-items:center;padding-top:60px}
+.hi{color:var(--teal);font-weight:500;margin-bottom:14px}
+h1{font-size:clamp(3.2rem,9vw,7rem);font-weight:800}
+h1 span{display:block;overflow:hidden}
+h1 span i{display:inline-block;font-style:normal;transform:translateY(105%);animation:up 1s cubic-bezier(.2,.9,.2,1) forwards}
+h1 span:nth-child(2) i{animation-delay:.15s;background:linear-gradient(100deg,var(--pink),var(--gold),var(--teal),var(--pink));background-size:300% 100%;-webkit-background-clip:text;background-clip:text;color:transparent;animation:up 1s .15s cubic-bezier(.2,.9,.2,1) forwards,flow 7s linear infinite}
+@keyframes up{to{transform:none}}@keyframes flow{to{background-position:300% 0}}
+.role{font:500 1.5rem "Bricolage Grotesque";margin:22px 0 14px;min-height:2.2rem}
+.role em{font-style:normal;color:var(--gold)}.role::after{content:"|";margin-left:3px;animation:blink 1s steps(1) infinite;color:var(--pink)}
+@keyframes blink{50%{opacity:0}}
+.lead{color:var(--mute);max-width:52ch}
+.btns{display:flex;gap:14px;flex-wrap:wrap;margin-top:32px}
+.btn{display:inline-block;padding:14px 28px;border-radius:99px;font-weight:500;border:1px solid var(--line);transition:transform .25s,box-shadow .25s;cursor:pointer;font-family:inherit;font-size:1rem;color:var(--ink);background:var(--card)}
+.btn.main{background:linear-gradient(120deg,var(--pink),#8e7cc3);border:0;color:#fff}
+.btn:hover{transform:translateY(-4px) scale(1.03);box-shadow:0 14px 34px -10px var(--pink)}
+.photo{position:relative;justify-self:center;width:min(380px,80vw);aspect-ratio:1;cursor:pointer}
+.photo::before{content:"";position:absolute;inset:-10px;border-radius:50% 46% 54% 50%/50% 54% 46% 50%;background:conic-gradient(from 0deg,var(--pink),var(--gold),var(--teal),var(--pink));animation:spin 8s linear infinite,morph 9s ease-in-out infinite;filter:blur(1px)}
+.photo .frame{position:absolute;inset:0;border-radius:50% 46% 54% 50%/50% 54% 46% 50%;overflow:hidden;background:var(--bg2);display:grid;place-items:center;animation:morph 9s ease-in-out infinite;border:6px solid var(--bg)}
+.photo img{width:100%;height:100%;object-fit:cover;display:block}
+.photo .ph{font:800 6rem "Bricolage Grotesque";color:var(--ink);text-align:center;line-height:1}
+.photo .ph small{display:block;font:400 .85rem "DM Sans";color:var(--mute);margin-top:10px}
+.chip{position:absolute;padding:8px 16px;border-radius:99px;font-size:.85rem;font-weight:500;background:var(--bg2);border:1px solid var(--line);animation:bob 4s ease-in-out infinite;z-index:2}
+.chip:nth-of-type(1){top:6%;left:-8%}.chip:nth-of-type(2){bottom:12%;right:-6%;animation-delay:-1.5s}.chip:nth-of-type(3){bottom:-3%;left:8%;animation-delay:-3s}
+@keyframes spin{to{transform:rotate(360deg)}}
+@keyframes morph{50%{border-radius:44% 56% 46% 54%/56% 44% 56% 44%}}
+@keyframes bob{50%{transform:translateY(-12px)}}
+.ridge{position:absolute;left:0;right:0;bottom:0;height:220px;z-index:0;opacity:.55;pointer-events:none}
+.ridge path{animation:drift 12s ease-in-out infinite alternate}.ridge path:nth-child(2){animation-duration:16s}
+@keyframes drift{to{transform:translateX(-40px)}}
+h2{font-size:clamp(2.2rem,5vw,3.6rem);margin-bottom:46px}
+.about{display:grid;grid-template-columns:1.4fr 1fr;gap:40px}
+.about p{color:var(--mute);margin-bottom:16px}
+.stats{display:grid;grid-template-columns:1fr 1fr;gap:16px}
+.stat{background:var(--card);border:1px solid var(--line);border-radius:var(--r);padding:22px;text-align:center}
+.stat b{display:block;font:800 2.6rem "Bricolage Grotesque";color:var(--gold)}
+.stat span{color:var(--mute);font-size:.9rem}
+.tl{position:relative;padding-left:34px;display:grid;gap:26px}
+.tl::before{content:"";position:absolute;left:8px;top:6px;bottom:6px;width:2px;background:linear-gradient(var(--pink),var(--teal))}
+.job{position:relative;background:var(--card);border:1px solid var(--line);border-radius:var(--r);padding:24px 28px;transition:transform .3s,border-color .3s}
+.job:hover{transform:translateX(8px);border-color:var(--pink)}
+.job::before{content:"";position:absolute;left:-34px;top:30px;width:18px;height:18px;border-radius:50%;background:var(--bg);border:3px solid var(--pink)}
+.job.now::before{background:var(--teal);border-color:var(--teal);animation:pulse 2s infinite}
+@keyframes pulse{0%{box-shadow:0 0 0 0 var(--teal)}100%{box-shadow:0 0 0 16px transparent}}
+.job h3{font-size:1.35rem}.job small{color:var(--gold);font-weight:500}
+.job ul{margin:10px 0 0 18px;color:var(--mute);font-size:.97rem}
+.grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(260px,1fr));gap:22px}
+.card{position:relative;display:flex;flex-direction:column;border-radius:var(--r);padding:28px;background:var(--card);border:1px solid var(--line);overflow:hidden;transform-style:preserve-3d;transition:transform .15s ease-out,border-color .3s;will-change:transform}
+.card::before{content:"";position:absolute;inset:0;background:radial-gradient(320px circle at var(--mx,50%) var(--my,0%),color-mix(in srgb,var(--pink) 30%,transparent),transparent 60%);opacity:0;transition:opacity .3s}
+.card:hover::before{opacity:1}.card:hover{border-color:var(--pink)}
+.card>*{position:relative}
+.card h3{font-size:1.4rem;margin-bottom:10px}.card p{color:var(--mute);font-size:.97rem;flex:1}
+.tags{display:flex;flex-wrap:wrap;gap:8px;margin:16px 0}
+.tags span{font-size:.78rem;padding:4px 12px;border-radius:99px;background:color-mix(in srgb,var(--teal) 16%,transparent);color:var(--teal)}
+.card a{font-weight:500;color:var(--gold)}.card a:hover{text-decoration:underline}
+.note{margin-top:22px;color:var(--mute);font-size:.9rem}
+.marq{overflow:hidden;border-block:1px solid var(--line);padding:22px 0;margin-bottom:34px;mask:linear-gradient(90deg,transparent,#000 10%,#000 90%,transparent)}
+.marq div{display:flex;gap:44px;width:max-content;animation:scroll 28s linear infinite;font:800 2rem "Bricolage Grotesque"}
+.marq:hover div{animation-play-state:paused}
+.marq span:nth-child(3n){color:var(--pink)}.marq span:nth-child(3n+1){color:var(--teal)}.marq span:nth-child(3n+2){color:var(--gold)}
+@keyframes scroll{to{transform:translateX(-50%)}}
+.skills{display:grid;grid-template-columns:repeat(auto-fit,minmax(230px,1fr));gap:18px}
+.skills div{background:var(--card);border:1px solid var(--line);border-radius:var(--r);padding:20px 22px}
+.skills h3{font-size:1.05rem;color:var(--gold);margin-bottom:6px}.skills p{color:var(--mute);font-size:.93rem}
+.edu{display:grid;gap:14px}
+.edu div{display:flex;justify-content:space-between;gap:16px;flex-wrap:wrap;padding:20px 26px;border-radius:var(--r);background:var(--card);border:1px solid var(--line)}
+.edu b{font-family:"Bricolage Grotesque";font-size:1.12rem}.edu span{color:var(--mute)}
+.contact{display:grid;grid-template-columns:1fr 1.2fr;gap:44px}
+.contact p{color:var(--mute);margin-bottom:22px}
+.links{display:grid;gap:12px}
+.links a{display:flex;gap:12px;padding:14px 18px;border-radius:16px;background:var(--card);border:1px solid var(--line);transition:transform .25s,border-color .25s;word-break:break-all}
+.links a:hover{transform:translateX(8px);border-color:var(--teal)}
+form{display:grid;gap:18px;background:var(--card);border:1px solid var(--line);border-radius:var(--r);padding:30px}
+.f{position:relative}
+.f input,.f textarea{width:100%;padding:22px 16px 10px;font:inherit;color:var(--ink);background:transparent;border:1px solid var(--line);border-radius:14px;transition:border-color .25s,box-shadow .25s}
+.f textarea{min-height:140px;resize:vertical}
+.f label{position:absolute;left:16px;top:15px;color:var(--mute);pointer-events:none;transition:all .2s;font-size:.97rem}
+.f input:focus,.f textarea:focus{outline:0;border-color:var(--pink);box-shadow:0 0 0 4px color-mix(in srgb,var(--pink) 22%,transparent)}
+.f input:focus+label,.f input:not(:placeholder-shown)+label,.f textarea:focus+label,.f textarea:not(:placeholder-shown)+label{top:5px;font-size:.74rem;color:var(--pink)}
+.toast{position:fixed;left:50%;bottom:calc(24px + env(safe-area-inset-bottom,0px));transform:translate(-50%,160%);background:var(--teal);color:#fff;padding:14px 24px;border-radius:99px;font-weight:500;transition:transform .5s cubic-bezier(.2,1.3,.4,1);z-index:70;max-width:90vw;text-align:center}
+.toast.show{transform:translate(-50%,0)}
+footer{text-align:center;color:var(--mute);padding:40px 5vw 60px;border-top:1px solid var(--line);font-size:.9rem;position:relative;z-index:1}
+.rv{opacity:0;transform:translateY(40px);transition:opacity .9s,transform .9s cubic-bezier(.2,.8,.2,1)}
+.rv.in{opacity:1;transform:none}
+@media(max-width:820px){.hero,.about,.contact{grid-template-columns:1fr}.hero{padding-top:30px}nav div a:nth-child(n+4){display:none}section{padding:80px 5vw}.glow{display:none}}
+@media(prefers-reduced-motion:reduce){*,*::before,*::after{animation:none!important;transition:none!important}h1 span i{transform:none}.rv{opacity:1;transform:none}.bar{display:none}}
+</style>
 </head>
 <body>
-
- 
-  
-
-  <div class="nav" >
-    <div class="nav-container">
-      <div class="logo">
-        <h3>Joshna Subedi</h3>
-      </div>
-      <button class="menu-toggle" onclick="toggleMenu()">☰</button>
-      <div class="aboutus">
-        <ul type="none">
-          <li><a href=".main-section">Home</a></li>
-          <li><a href="#aboutme">About Me</a></li>
-          <li><a href="#experiences">Experiences</a></li>
-          <li><a href="#skills">Skills</a></li>
-          <li><a href=".contacthead">Contact</a></li>
-        </ul>
-      </div>
-    </div>
+<div class="bar"></div><div class="glow" id="glow"></div>
+<nav><b>JS.</b><div><a href="#about">About</a><a href="#experience">Experience</a><a href="#projects">Projects</a><a href="#skills">Skills</a><a href="#education">Education</a><a href="#contact">Contact</a></div></nav>
+<main>
+<section class="hero" id="top">
+<div>
+<p class="hi">Namaste, I’m</p>
+<h1><span><i>Joshna</i></span><span><i>Subedi</i></span></h1>
+<p class="role">I build <em id="typed">MERN apps</em></p>
+<p class="lead">Associate Software Engineer in Kathmandu. I build, test and debug full-stack web apps, and I’m working on AI context-engineering at Lyra Innovations.</p>
+<div class="btns"><a class="btn main" href="#contact">Hire me</a><a class="btn" href="#projects">See my work</a><a class="btn" href="https://github.com/joshnasubedi" target="_blank" rel="noopener">GitHub</a></div>
+</div>
+<div class="photo" id="photo">
+  <div class="frame">
+    <img src="img.jpeg" alt="Portrait of Joshna Subedi" width="380" height="380">
   </div>
-  <div class="fade-in-section">
-
-    <section id="main-section" class="main-section" >
-      <div class="blob-background"></div>
-
-      <div class="first-section">
-<img src="picture2.jpeg" alt="photo1">
-
-        </div>
-        <div class="second-section">
-
-          <div class="portfolio-title">
-            <h1>My</h1>
-            <div class="line"></div>
-            <h1>Portfolio</h1>
-          </div>
-        
-          <h3>
-            Explore my journey as I combine creativity and technology to create impactful digital solutions.
-            <br><br>
-            Feel free to browse my portfolio, learn more about me, and check out my latest projects.
-            Let’s collaborate and make something amazing together!
-          </h3>
-        </div>
-        
-      </section>
-
-      </div>
-    
-<section id="aboutme" class="fade-in-section">
-  <div class="blob-background-about"></div> <!-- Blob background -->
-
-  <div class="section-header">
-    <div class="vertical-line"></div>
-    <h1>About Me</h1>
-  </div>
-  <hr class="line">
-
-
-  <div class="aboutme-content">
-    <p>
-      Hi! I'm <strong>Joshna Subedi</strong>, a passionate BSc.CSIT student driven by curiosity and creativity. I'm focused on crafting modern, user-friendly web applications using the <strong>MERN stack</strong> and exploring the exciting world of <strong>digital marketing</strong>.
-    </p>
-    <p>
-      Whether it's building responsive designs, optimizing performance, or connecting with audiences through strategy, I love finding elegant solutions to complex problems. My aim is to blend <strong>technical expertise</strong> with <strong>marketing insights</strong> to build meaningful, impactful projects.
-    </p>
-    <p>
-      Outside academics, I'm a continuous learner, always eager to pick up new skills, collaborate on innovative ideas, and stay inspired. From UI design to SEO trends, I embrace every opportunity to grow.
-    </p>
-    <p>
-      Let’s build something amazing together!
-    </p>
-  </div>
+  <span class="chip">⚛️ React</span><span class="chip">🧪 API testing</span><span class="chip">🤖 AI projects</span>
+</div>
+<svg class="ridge" viewBox="0 0 1200 220" preserveAspectRatio="none" aria-hidden="true"><path d="M-60 220V150l120-70 90 50 130-110 110 120 100-60 140 100 120-90 130 80 110-70 150 80v40z" fill="var(--bg2)"/><path d="M-60 220V180l100-40 110 40 150-80 120 70 130-40 140 60 120-50 130 50 120-30 100 40v20z" fill="var(--pink)" opacity=".35"/></svg>
 </section>
 
-  <section id="experiences" class="fade-in-section">
-    <div class="blob-background-experience"></div>
-      <div class="images-container">
-        <img src="img3.jpg" alt="Experience Image 1" class="exp-img">
-        <img src="time.jpg" alt="Experience Image 2" class="exp-img time-img">
-      </div>
-      <div class="experience-container">
-      <div class="exp2">
-      
-        <h1>My</h1>
-        <hr class="line">
-        <h1>Experiences</h1>
-  
-        <h3>Freelance Content Writer</h3>
-        <ul>
-          <li>Partnered with Hanshikhar Technology and worked as a content writer</li>
-          <li>Year: 2021</li>
-        </ul>
-  
-        <h3>Full Stack </h3>
-        <ul>
-          <li>Worked as an Intern on Fullstack at EEE Innovation Ghar</li>
-          <li>Year: 2022</li>
-        </ul>
-  
-        <h3>Social Media Manager</h3>
-        <ul>
-          <li>Partnered with SARTE and managed their social media</li>
-          <li>Year: 2023</li>
-        </ul>
-  
-        <h3>Dotnet</h3>
-        <ul>
-          <li>Worked as an Intern on Dotnet at Himalayan Bank Limited</li>
-          <li>Year: 2024</li>
-        </ul>
-  
-        <h3>Internship at Unified Mentor</h3>
-        <ul>
-          <li>Virtual Internship at Unified Mentor in Web-Development, India</li>
-          <li>Year: 2024</li>
-        </ul>
-      </div>
-    </div>
-  </section>
-  
-  
-  <section id="skills" class="fade-in-section">
-    <div class="blob-background-skills"></div> <!-- Another blob background for skills -->
+<section id="about" class="rv">
+<h2>About me</h2>
+<div class="about">
+<div><p>I’m an Associate Software Engineer with hands-on experience across the MERN stack, API testing and full-stack development.</p>
+<p>I build and debug client applications, and I contribute to an AI-based project covering context, retrieval, validation, assembly and response generation.</p>
+<p>I’m finishing my BSc CSIT in 2026 and have worked in four internships, from a bank’s head office to product startups.</p></div>
+<div class="stats"><div class="stat"><b data-n="5">0</b><span>Teams worked with</span></div><div class="stat"><b data-n="6">0</b><span>Featured projects</span></div><div class="stat"><b data-n="7">0</b><span>Languages</span></div><div class="stat"><b data-n="2026">0</b><span>BSc CSIT graduate</span></div></div>
+</div>
+</section>
 
-    <h2>My Skills</h2>
+<section id="experience" class="rv">
+<h2>Experience</h2>
+<div class="tl">
+<div class="job now"><h3>Associate Software Engineer</h3><small>Lyra Innovations · Dec 2025 – Present</small><ul><li>Completed client project tasks and tested MERN stack applications.</li><li>Used Postman for API testing and Browser DevTools to debug frontend issues.</li><li>Contributed to an AI project: context, retrieval, validation, assembly and response generation.</li></ul></div>
+<div class="job"><h3>Full-Stack Development Intern</h3><small>EEE Innovation · 6 months</small><ul><li>Built parts of the Chitrakarko Katha e-commerce site and other mini projects.</li><li>Worked with Laravel and modern frontend tools; used Git and manual testing.</li></ul></div>
+<div class="job"><h3>MERN Stack Virtual Intern</h3><small>Unified Mentorship, India</small><ul><li>Completed and tested easy-to-medium tasks under mentor guidance.</li></ul></div>
+<div class="job"><h3>Frontend Development Intern</h3><small>Amnil Technologies · 3 months</small><ul><li>Built responsive UIs with ReactJS, TypeScript and Tailwind CSS.</li><li>Used Git and tested APIs in Postman.</li></ul></div>
+<div class="job"><h3>.NET Intern</h3><small>Himalayan Bank Limited, Kamaladi · 3 months</small><ul><li>Worked on the bank’s Fuel Management System with MVC, Web API and .NET Core.</li><li>Collaborated through Git and tracked bugs in Jira.</li></ul></div>
+</div>
+</section>
 
-    <hr class="line">
-  
+<section id="projects" class="rv">
+<h2>Projects</h2>
+<div class="grid">
+<div class="card"><h3>TrackNGo</h3><p>School bus tracking system where parents live-track their child’s vehicle. Calculates the shortest route between pickup and drop-off points.</p><div class="tags"><span>PostgreSQL</span><span>Express</span><span>React</span><span>Node</span><span>Socket.io</span><span>Strapi</span></div><a href="https://github.com/joshnasubedi/project" target="_blank" rel="noopener">View code →</a></div>
+<div class="card"><h3>Life Moments Index</h3><p>E-governance platform for registering birth, death, migration and marriage events.</p><div class="tags"><span>PostgreSQL</span><span>Express</span><span>React</span><span>Node</span></div><a href="https://github.com/joshnasubedi/LMI/tree/new-branch" target="_blank" rel="noopener">View code →</a></div>
+<div class="card"><h3>Chitrakarko Katha</h3><p>Art e-commerce store with a blog where artists and writers share stories about art.</p><div class="tags"><span>Laravel</span><span>MySQL</span><span>Frontend</span></div><a href="https://github.com/joshnasubedi/laravel" target="_blank" rel="noopener">View code →</a></div>
+<div class="card"><h3>Frontend Practice</h3><p>Tasks and mini-projects from my ongoing frontend learning.</p><div class="tags"><span>HTML</span><span>CSS</span><span>JavaScript</span></div><a href="https://github.com/joshnasubedi/Frontend" target="_blank" rel="noopener">View code →</a></div>
+<div class="card"><h3>Hiking &amp; Travelling Website</h3><p>A hiking and travel website I built in my recent role at the office, helping visitors explore trails and plan trips.</p><div class="tags"><span>Full-Stack</span><span>Travel</span><span>Professional work</span></div><a href="https://github.com/joshnasubedi/hnt" target="_blank" rel="noopener">View code →</a></div>
+<div class="card"><h3>RACE Framework</h3><p>An AI framework that tests other software automatically and checks whether it works, so teams don’t need to test by hand.</p><div class="tags"><span>AI</span><span>Test automation</span><span>Professional work</span></div><a href="https://github.com/sochdai/race-framework" target="_blank" rel="noopener">View code →</a></div>
+</div>
+<p class="note">Projects from my professional work aren’t listed publicly because of client confidentiality.</p>
+</section>
 
-    <div class="skillparagraph">
-      <!-- Skill Card 1 - MERN Stack -->
-      <div class="skill-card">
-        <h3>MERN Stack</h3>
-        <ul>
-          <li>Completed full Web-Development Course at EEE Innovation Ghar and 3 months Internship on MERN stack</li>
-          <li>Learnt Skills: HTML, CSS, Bootstrap, JavaScript, Node.js, Express.js, PHP, Laravel</li>
-        </ul>
-      </div>
-  
-      <!-- Skill Card 2 - Digital Marketing -->
-      <div class="skill-card">
-        <h3>Digital Marketing</h3>
-        <ul>
-          <li>Completed Digital Marketing Full Course from EEE Innovation Ghar</li>
-          <li>Learnt Skills: Social Media Marketing, Email Marketing, SEO, SEM, Content Marketing, Meta Ads, Google Ads</li>
-        </ul>
-      </div>
-  
-      <!-- Skill Card 3 - Dotnet -->
-      <div class="skill-card">
-        <h3>Dotnet</h3>
-        <ul>
-          <li>Completed 3 months Internship on Dotnet at Himalayan Bank Limited</li>
-          <li>Learnt Skills: Dotnet, Postgres [Worked on real-time projects]</li>
-        </ul>
-      </div>
-    </div>
-  </section>
-  
+<section id="skills" class="rv">
+<h2>Skills</h2>
+<div class="marq" aria-hidden="true"><div><span>React</span><span>Next.js</span><span>Node.js</span><span>Express</span><span>TypeScript</span><span>PostgreSQL</span><span>Tailwind</span><span>Django</span><span>C#</span><span>Postman</span><span>React</span><span>Next.js</span><span>Node.js</span><span>Express</span><span>TypeScript</span><span>PostgreSQL</span><span>Tailwind</span><span>Django</span><span>C#</span><span>Postman</span></div></div>
+<div class="skills">
+<div><h3>Languages</h3><p>C#, JavaScript, TypeScript, Python, SQL, HTML, CSS</p></div>
+<div><h3>Frameworks</h3><p>ReactJS, Next.js, Node.js, Express.js, Strapi, Django, Bootstrap, Tailwind CSS</p></div>
+<div><h3>Databases</h3><p>PostgreSQL, MySQL</p></div>
+<div><h3>Tools</h3><p>Git, Postman, Browser DevTools, Figma, Canva, Canva Pro</p></div>
+</div>
+</section>
 
-<div class="fade-in-section">
-  <section id="contact" class="contacthead" >
-    <div class="blob-background-contact">
-      <div class="circle one"></div>
-      <div class="circle two"></div>
-    </div>
-    <div class="contact-title">
-      <h1>Contact Me</h1>
-      <div class="line"></div>
-    </div>
-    
+<section id="education" class="rv">
+<h2>Education</h2>
+<div class="edu">
+<div><b>BSc Computer Science and Information Technology</b><span>New Summit College, Shantinagar · 2026</span></div>
+<div><b>Higher Secondary (+2 Science)</b><span>Trinity International College · 2021</span></div>
+<div><b>Secondary Education (SEE)</b><span>The Excelsior School, Swoyambhu · 2019</span></div>
+<div><b>Training</b><span>Full-Stack Web Dev &amp; Digital Marketing (EEE Innovation Ghar) · Next.js workshop</span></div>
+</div>
+</section>
 
- <div class="contact-container" >
-  <div class="contact-info">
-      <div class="info-box">
-          <h3>Email</h3>
-          <p>jyotshnasubedi13@gmail.com</p>
-      </div>
-      <div class="info-box">
-          <h3>Phone</h3>
-          <p>+977 9741660209</p>
-      </div>
-      <div class="info-box">
-          <h3>Location</h3>
-          <p>Kathmandu, Nepal</p>
-          <p> </p>
-      </div>
-  </div>
-  <form action="https://formsubmit.co/jyotshnasubedi13@gmail.com" method="POST">
-    <input type="text" name="name" placeholder="Your Name" required>
-    <input type="email" id="email" name="email" placeholder="Your Email" required>
-    <textarea name="message" rows="5"  name="msg" placeholder="Your Message" required></textarea>
-    <button type="submit">Send Message</button>
+<section id="contact" class="rv">
+<h2>Let’s work together</h2>
+<div class="contact">
+<div><p>Have a project, a role or a question? Send a message and it opens in your email app, addressed to me.</p>
+<div class="links"><a href="mailto:jyotshnasubedi13@gmail.com">✉️ jyotshnasubedi13@gmail.com</a><a href="tel:+9779741660209">📞 9741660209</a><a href="https://github.com/joshnasubedi" target="_blank" rel="noopener">💻 github.com/joshnasubedi</a><a href="#top">📍 Sitapaila, Kathmandu</a></div></div>
+<form id="form">
+<div class="f"><input id="n" required placeholder=" " autocomplete="name"><label for="n">Your name</label></div>
+<div class="f"><input id="e" type="email" required placeholder=" " autocomplete="email"><label for="e">Your email</label></div>
+<div class="f"><textarea id="m" required placeholder=" "></textarea><label for="m">Your message</label></div>
+<button class="btn main" type="submit">Send email</button>
 </form>
+</div>
 </section>
+</main>
+<footer>© 2026 Joshna Subedi · Built in Kathmandu</footer>
+<div class="toast" id="toast" role="status"></div>
+<script>
+const $=s=>document.querySelector(s);
 
 
-
-
-</div> 
-</div>
-<script src="https://smtpjs.com/v3/smtp.js"></script>
- <script>
-  function toggleMenu() {
-    const aboutUsMenu = document.querySelector('.aboutus');
-    aboutUsMenu.classList.toggle('active');
-}
-// Enable smooth scrolling
-  document.querySelectorAll('.aboutus a').forEach(anchor => {
-    anchor.addEventListener('click', function (e) {
-      e.preventDefault();
-      document.querySelector(this.getAttribute('href')).scrollIntoView({
-        behavior: 'smooth'
-      });
-    });
-  });
-
-  // document.addEventListener("DOMContentLoaded", () => {
-  //   const faders = document.querySelectorAll('.fade-in-section');
-
-  //   const appearOptions = {
-  //     threshold: 0.2,
-  //     rootMargin: "0px 0px -50px 0px"
-  //   };
-
-  //   const appearOnScroll = new IntersectionObserver((entries, observer) => {
-  //     entries.forEach(entry => {
-  //       if (!entry.isIntersecting) return;
-  //       entry.target.classList.add("visible");
-  //       observer.unobserve(entry.target); // remove if you want it to trigger once
-  //     });
-  //   }, appearOptions);
-
-  //   faders.forEach(section => {
-  //     appearOnScroll.observe(section);
-  //   });
-  // });
-
-
-  document.addEventListener("DOMContentLoaded", () => {
-    const faders = document.querySelectorAll('.fade-in-section');
-
-    const appearOptions = {
-      threshold: 0.2,
-      rootMargin: "0px 0px -50px 0px"
-    };
-
-    const appearOnScroll = new IntersectionObserver((entries) => {
-      entries.forEach(entry => {
-        if (entry.isIntersecting) {
-          entry.target.classList.add("visible");
-        } else {
-          entry.target.classList.remove("visible");
-        }
-      });
-    }, appearOptions);
-
-    faders.forEach(section => {
-      appearOnScroll.observe(section);
-    });
-  });
- 
-  function slowScrollTo(target, duration) {
-  let start = window.scrollY,
-      end = target.offsetTop,
-      change = end - start,
-      startTime = null;
-
-  function scroll() {
-    if (!startTime) startTime = performance.now();
-
-    let currentTime = performance.now(),
-        timeElapsed = currentTime - startTime,
-        progress = timeElapsed / duration;
-
-    if (progress < 1) {
-      window.scrollTo(0, start + change * progress);
-      requestAnimationFrame(scroll);
-    } else {
-      window.scrollTo(0, end);
-    }
-  }
-
-  scroll();
-}
-
-document.querySelectorAll('a[href^="#"]').forEach(anchor => {
-  anchor.addEventListener('click', function (e) {
-    e.preventDefault();
-    const target = document.querySelector(this.getAttribute('href'));
-    slowScrollTo(target, 2000); // Adjust '2000' for a slower or faster scroll speed (in milliseconds)
-  });
-});
-
-// Function to animate the progress bar when the section is in view
-function animateProgress() {
-  const skills = document.querySelectorAll('.skill');
-  
-  skills.forEach(skill => {
-    const progress = skill.querySelector('.progress');
-    const percentage = skill.querySelector('.skill-percentage');
-    const skillLevel = parseInt(percentage.textContent);  // Get current skill level
-    
-    let currentWidth = 0;
-    const targetWidth = skillLevel; // Target skill level
-    
-    const interval = setInterval(() => {
-      if (currentWidth < targetWidth) {
-        currentWidth++;
-        progress.style.width = currentWidth + '%';
-        percentage.textContent = currentWidth + '%';
-      } else {
-        clearInterval(interval);
-      }
-    }, 20);
-  });
-}
-
-// Function to check if the section is in view
-function isInView(element) {
-  const rect = element.getBoundingClientRect();
-  return rect.top >= 0 && rect.bottom <= window.innerHeight;
-}
-
-// Event listener to trigger the animation when the section comes into view
-window.addEventListener('scroll', () => {
-  const skillsSection = document.getElementById('skills');
-  
-  if (isInView(skillsSection)) {
-    animateProgress();
-  }
-});
-
-//glowy
-document.addEventListener('mousemove', (e) => {
-    const cursorTrail = document.createElement('div');
-    cursorTrail.classList.add('cursor-trail');
-    document.body.appendChild(cursorTrail);
-
-    // Set position based on mouse coordinates
-    cursorTrail.style.left = `${e.pageX - 5}px`;
-    cursorTrail.style.top = `${e.pageY - 5}px`;
-
-    // Remove the trail element after the animation ends (0.5s)
-    setTimeout(() => {
-      cursorTrail.remove();
-    }, 500);
-  });
-
-
-  //for the blob
-   // Create an IntersectionObserver to trigger the animation
-  const skillsSection = document.querySelector('.skills-section');
-  const blobBackground = document.querySelector('.blob-background');
-
-  const observer = new IntersectionObserver(
-    (entries, observer) => {
-      entries.forEach(entry => {
-        if (entry.isIntersecting) {
-          // Add class to start animation when section is in view
-          blobBackground.classList.add('animate-blob');
-          observer.disconnect(); // Stop observing after animation starts
-        }
-      });
-    },
-    { threshold: 0.5 } // Trigger when 50% of the section is in view
-  );
-
-  observer.observe(skillsSection);
-
-
-  //aboutsection
-
-  const aboutSection = document.getElementById('aboutme');
-const blobAbout = document.querySelector('.blob-background-about');
-
-const observerAbout = new IntersectionObserver((entries, observer) => {
-  entries.forEach(entry => {
-    if (entry.isIntersecting) {
-      blobAbout.classList.add('animate-blob-about');
-      // observer.disconnect(); // Optional: if you want it only once
-    }
-  });
-}, { threshold: 0.3 });
-
-if (aboutSection && blobAbout) {
-  observerAbout.observe(aboutSection);
-}
-
+// typing roles
+const roles=['MERN apps','REST APIs','AI-powered tools','responsive UIs'];let ri=0,ci=0,del=false;const t=$('#typed');
+(function type(){const w=roles[ri];ci+=del?-1:1;t.textContent=w.slice(0,ci);let d=del?45:90;if(!del&&ci===w.length){del=true;d=1400}else if(del&&ci===0){del=false;ri=(ri+1)%roles.length;d=300}setTimeout(type,d)})();
+// reveal + counters
+const io=new IntersectionObserver(es=>es.forEach(e=>{if(!e.isIntersecting)return;e.target.classList.add('in');e.target.querySelectorAll('[data-n]').forEach(c=>{const n=+c.dataset.n,s=performance.now();(function f(x){const p=Math.min((x-s)/1400,1);c.textContent=Math.round(n*(1-Math.pow(1-p,3)));if(p<1)requestAnimationFrame(f)})(s)});io.unobserve(e.target)}),{threshold:.15});
+document.querySelectorAll('.rv').forEach(el=>io.observe(el));
+// cursor glow + card tilt
+const g=$('#glow');addEventListener('pointermove',e=>{g.style.left=e.clientX+'px';g.style.top=e.clientY+'px'});
+document.querySelectorAll('.card').forEach(c=>{c.addEventListener('pointermove',e=>{const b=c.getBoundingClientRect(),x=e.clientX-b.left,y=e.clientY-b.top;c.style.setProperty('--mx',x+'px');c.style.setProperty('--my',y+'px');c.style.transform=`perspective(700px) rotateX(${(.5-y/b.height)*8}deg) rotateY(${(x/b.width-.5)*8}deg) translateY(-4px)`});c.addEventListener('pointerleave',()=>c.style.transform='')});
+// contact -> opens email app
+const toast=$('#toast');
+$('#form').addEventListener('submit',e=>{e.preventDefault();
+const n=$('#n').value.trim(),m=$('#e').value.trim(),b=$('#m').value.trim();
+const body=encodeURIComponent(b+'\n\n— '+n+' ('+m+')');
+const sub=encodeURIComponent('Portfolio message from '+n);
+location.href='mailto:jyotshnasubedi13@gmail.com?subject='+sub+'&body='+body;
+toast.textContent='Opening your email app. Press send there to deliver it.';toast.classList.add('show');setTimeout(()=>toast.classList.remove('show'),5000)});
 </script>
-
-<div class="bubble-container">
-  <div class="bubble"></div>
-  <div class="bubble"></div>
-  <div class="bubble"></div>
-  <div class="bubble"></div>
-  <div class="bubble"></div>
-  <div class="bubble"></div>
-  <div class="bubble"></div>
-  <div class="bubble"></div>
-  <div class="bubble"></div>
-  <div class="bubble"></div>
-  <div class="bubble"></div>
-</div>
-
 </body>
 </html>
-
